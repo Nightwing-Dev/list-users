@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="image">
+    <div class="create-user">
+        <div id="wrapper">
+            <form class="custom-form" method="post">
+                <img src="../../assets/backgroundd(3).jpg">
+                <div class="clr">
+                    <hr />
+
+                    <form (ngSubmit)="createUser()" [formGroup]="createUserForm">
+                        <input class="font-validators" type="text" name="name" id="name"
+                            placeholder="     Escribe Tu nombre" size="70" id="name" required formControlName="name">
+                        <div *ngIf="createUserForm.get('name')?.touched && createUserForm.get('name')?.errors?.['required']"
+                            class="validators">* Nombre es requerido *</div>
+                        <input class="font-validators" type="text" name="job"
+                            placeholder="     Escribe Tu trabajo" size="70" id="job" required
+                            formControlName="job">
+                        <div *ngIf="createUserForm.get('job')?.touched && createUserForm.get('job')?.errors?.['required']"
+                            class="validators">* trabajo es requerido *</div>
+                        <div class="row" routerLinkActive="active">
+                            <div class="center"><button class="btn pink darken-4" type="submit"
+                                    [disabled]="createUserForm.invalid">Registrarse !!</button></div>
+                            <div class="column">
+                            </div>
+                        </div>
+                    </form>
+                </div>

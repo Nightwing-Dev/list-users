@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+
+
+<!--img class="round" src="{{}}">
+    </div>
+    <div class="name-container">
+        <span class="firsName">{{}}</span>
+        <span class="lastName">{{}}</span>
+    </div>
+</li-->
+<input id="search" class="form-control" name="filteredString" [(ngModel)]="filteredString" type="search"required placeholder="Busca aqui el usuario...">
+<li class="card-container">
+    <div *ngFor="let user of users | filter: filteredString">
+    
+        <div class="image-container">
+            <img class="round" [src]="user.avatar">
+        </div>
+        <span class="image-container">{{ user.first_name }} </span>
+
+        <span class="image-container">{{ user.last_name}} </span>
+        <div class="clr">
+        <span>{{user.email}} </span>
+        <br>
+        <br class="margin">
+        <button class="btn pink darken-4 btn-small" (click)="delete(user.id)"> eliminar usuario </button>
+        <hr>
+    </div>
+
+    <!--tr *ngFor="let lista of listarUser"></tr>
+</table-->

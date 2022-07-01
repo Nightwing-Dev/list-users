@@ -1,0 +1,21 @@
+.nav-wrapper {
+    background-color: #4e0178;
+    align-self: auto;
+
+
+    .nav-search {
+        background-color: white;
+
+    }
+}
+
+.nav-search {
+    border-radius: 100px;
+    height: 56px;
+    border-top: 2em;
+}
+
+input::placeholder {
+    color: black;
+    font: bold;
+}

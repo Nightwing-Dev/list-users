@@ -1,0 +1,31 @@
+<div class="image">
+    <div id="wrapper">
+        <img src="../../assets/vapi.jpg" class="img">
+        <div class="clr">
+            <hr />
+        </div>
+        <div class="forms">
+            <form (ngSubmit)="login()" [formGroup]="loginForm">
+                <input class="font-validators" type="email" name="email" id="email" placeholder="     Escribe Tu Email"
+                    size="70" id="email" required formControlName="email" [email]="true">
+                <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['email']"
+                    class="validators">* Escribe un formato de correo valido *</div>
+                <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']"
+                    class="validators">* Email es requerido*</div>
+                <input class="font-validators" type="password" name="password" placeholder="     Escribe Tu Password"
+                    size="70" id="password" required formControlName="password" required minlength="8">
+                <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
+                    class="validators">* password es requerida *</div>
+                <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['minlength']"
+                    class="validators">* Minimo de caracteres permitidos 8 *</div>
+                <div class="row" routerLinkActive="active">
+                    <div class="column"><button class="btn pink darken-4" type="submit"
+                            [disabled]="loginForm.invalid">Inicia Sesion</button></div>
+                    <div class="column">
+                        <p class="forgot-password" id="puntero" routerLink="../forgot-password">Olvidaste tu password?
+                            Haz click aqui!</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

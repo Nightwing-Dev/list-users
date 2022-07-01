@@ -1,0 +1,26 @@
+<nav>
+    <div class="nav-wrapper" >
+      <img src="../../assets/Navbar usuarios(5).png" alt="100" height="64">
+      <img src="../../assets/Navbar usuarios(7).png" alt="100" height="64">
+      <img src="../../assets/Navbar usuarios(4).png" alt="100" height="64">
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down" routerLinkActive="active">
+        <li><i class="material-icons">add</i></li>
+        <li><a routerLink="/crearusuario">Crear Usuario</a></li>
+        <li><a routerLink="/listarusuario">Listar Usuarios</a></li>
+        <li><i class="material-icons">exit_to_app</i></li> 
+        <li><a href="javascript:void(0)" (click)="logout()">Cerrar Sesion</a></li>
+       
+        <li>  
+            <div class="nav-search" formControlname="filterListUser" >
+                <div class="input-field">
+                  <input id="search" class="form-control" name="filteredString" [(ngModel)]="filteredString" type="search"required placeholder="Busca aqui el usuario...">
+                  <label class="label-icon" for="search"><i class="material-icons" >search</i></label>
+                  <i class="material-icons">close</i>
+                </div> 
+            </div>
+          </li>
+        </ul>
+    </div>
+  </nav> 
+ 
